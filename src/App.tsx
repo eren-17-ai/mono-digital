@@ -402,8 +402,8 @@ export default function App() {
             {[
               { icon: Zap, title: "Meta Reklam Yönetimi", desc: "Facebook ve Instagram'da hedef odaklı stratejilerle maksimum dönüşüm sağlıyoruz." },
               { icon: Globe, title: "Web Tasarım", desc: "Hızlı, kullanıcı dostu ve prestijli web deneyimleri tasarlıyoruz." },
-              { icon: Cpu, title: "Sosyal Medya Yönetimi", desc: "Marka dilinizi sosyal medyada profesyonel içeriklerle güçlendiriyoruz." },
-              { icon: Bot, title: "Marka Kimliği", desc: "Markanızın görsel dünyasını baştan aşağıya kurumsal bir yapıda kurguluyoruz." },
+              { icon: Bot, title: "Otomasyon Kurulumu", desc: "İş süreçlerinizi hızlandıran, müşteri takibini ve operasyonları otomatikleştiren sistemler kuruyoruz." },
+              { icon: Network, title: "Marka Kimliği", desc: "Markanızın görsel dünyasını baştan aşağıya kurumsal bir yapıda kurguluyoruz." },
               { icon: ArrowRight, title: "Performans Pazarlama", desc: "Sürdürülebilir büyüme stratejileri ile dönüşüm oranlarınızı maksimize ediyoruz." },
               { icon: Database, title: "Dijital Danışmanlık", desc: "Dijital büyüme stratejilerinizde uzman görüşümüzle yanınızdayız." }
             ].map((service, i) => (
@@ -454,8 +454,8 @@ export default function App() {
                 oldPrice: "17.500 TL",
                 price: "10.000 TL",
                 period: "/ Ay",
-                subtitle: "Sınırlı Kontenjan",
-                features: ["Web site yönetimi", "Meta reklam yönetimi", "Sosyal medya desteği", "Kesintisiz büyüme"],
+                subtitle: "Web + Reklam + Otomasyon",
+                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek"],
                 highlight: true,
                 color: "brand-purple",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
