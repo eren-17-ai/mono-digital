@@ -441,26 +441,34 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
+                title: "Web Site Kurulumu", 
+                oldPrice: "10.000 TL",
+                price: "8.000 TL",
+                subtitle: "Tek Seferlik Kurulum",
+                features: ["Modern web tasarımı", "Mobil uyumlu yapı", "SEO altyapısı", "Hızlı teslimat"],
+                color: "brand-blue",
+                whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Web%20Site%20Kurulumu%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
+              },
+              { 
+                title: "Dijital Sistem Paketi", 
+                oldPrice: "17.500 TL",
+                price: "10.000 TL",
+                period: "/ Ay",
+                subtitle: "Sınırlı Kontenjan",
+                features: ["Web site yönetimi", "Meta reklam yönetimi", "Sosyal medya desteği", "Kesintisiz büyüme"],
+                highlight: true,
+                color: "brand-purple",
+                whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
+              },
+              { 
                 title: "Reklam Yönetimi", 
-                price: "5.000₺'den başlayan fiyatlarla",
+                oldPrice: "7.500 TL",
+                price: "5.000 TL",
+                period: "/ Ay",
+                subtitle: "Aylık Yönetim",
                 features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu"],
                 color: "brand-blue",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Reklam%20Y%C3%B6netimi%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
-              },
-              { 
-                title: "Web + Reklam", 
-                price: "8.000₺'den başlayan fiyatlarla",
-                features: ["Modern web sitesi", "Mobil uyumlu tasarım", "Reklam yönetimi", "Temel SEO optimizasyonu"],
-                highlight: true,
-                color: "brand-purple",
-                whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Web%20%2B%20Reklam%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
-              },
-              { 
-                title: "Marka Paketi", 
-                price: "Özel fiyatlandırma",
-                features: ["Marka kimliği", "Sosyal medya tasarımları", "Reklam stratejisi", "Dijital altyapı desteği"],
-                color: "brand-blue",
-                whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Marka%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
               }
             ].map((pkg, i) => (
               <motion.div
@@ -474,8 +482,31 @@ export default function App() {
                 {pkg.highlight && (
                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">En Çok Tercih Edilen</span>
                 )}
-                <h3 className="text-2xl font-bold mb-2 text-white font-display">{pkg.title}</h3>
-                <div className="text-brand-purple font-bold text-sm mb-8 font-mono">{pkg.price}</div>
+                <h3 className="text-2xl font-bold mb-1 text-white font-display">{pkg.title}</h3>
+                {pkg.subtitle && (
+                  <div className="text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-6 font-bold">
+                    {pkg.subtitle}
+                  </div>
+                )}
+                
+                <div className="mb-8 flex flex-col">
+                  {pkg.oldPrice && (
+                    <span className="text-slate-500 text-sm line-through opacity-50 font-mono mb-1">
+                      {pkg.oldPrice}
+                    </span>
+                  )}
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-white tracking-tighter font-display">
+                      {pkg.price}
+                    </span>
+                    {pkg.period && (
+                      <span className="text-slate-400 text-sm font-medium">
+                        {pkg.period}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
                 <div className="space-y-4 mb-10 flex-1">
                   {pkg.features.map((feat, fi) => (
                     <div key={fi} className="flex items-center gap-3 text-sm text-slate-400">
