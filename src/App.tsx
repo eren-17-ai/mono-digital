@@ -530,7 +530,43 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="hakkımızda" className="py-32 px-6 relative">
+      <motion.section id="why-mono-digital" className="py-32 px-6 relative" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-7xl font-bold text-white font-display mb-4">Why Mono Digital?</h2>
+      <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+        We build digital systems focused on growth, visibility, and customer conversion.
+      </p>
+    </div>
+    <div className="text-center mb-12">
+      <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+        At Mono Digital, we focus on more than just aesthetics. We create digital systems designed to help businesses look more professional, generate more leads, and convert more customers. By combining web design, advertising, and automation into one streamlined structure, we help brands build a stronger digital presence.
+      </p>
+    </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Card 1 */}
+      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
+        <h3 className="text-xl font-bold text-white mb-2">Results-Driven Approach</h3>
+        <p className="text-slate-400 text-sm">We focus on customer conversion and business growth, not just visual design.</p>
+      </motion.div>
+      {/* Card 2 */}
+      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
+        <h3 className="text-xl font-bold text-white mb-2">Modern Digital Infrastructure</h3>
+        <p className="text-slate-400 text-sm">We integrate websites, advertising, and automation into one connected system.</p>
+      </motion.div>
+      {/* Card 3 */}
+      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
+        <h3 className="text-xl font-bold text-white mb-2">Fast & Flexible Process</h3>
+        <p className="text-slate-400 text-sm">We provide fast-moving and adaptable solutions without slow traditional agency workflows.</p>
+      </motion.div>
+      {/* Card 4 */}
+      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
+        <h3 className="text-xl font-bold text-white mb-2">Branding + Performance</h3>
+        <p className="text-slate-400 text-sm">We help brands look premium while also improving customer engagement and conversion.</p>
+      </motion.div>
+    </div>
+  </div>
+</motion.section>
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <motion.span 
             initial={{ opacity: 0 }}
