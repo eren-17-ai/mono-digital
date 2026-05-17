@@ -530,75 +530,103 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <motion.section id="why-mono-digital" className="py-32 px-6 relative" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-7xl font-bold text-white font-display mb-4">Why Mono Digital?</h2>
-      <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-        We build digital systems focused on growth, visibility, and customer conversion.
-      </p>
-    </div>
-    <div className="text-center mb-12">
-      <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-        At Mono Digital, we focus on more than just aesthetics. We create digital systems designed to help businesses look more professional, generate more leads, and convert more customers. By combining web design, advertising, and automation into one streamlined structure, we help brands build a stronger digital presence.
-      </p>
-    </div>
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* Card 1 */}
-      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
-        <h3 className="text-xl font-bold text-white mb-2">Results-Driven Approach</h3>
-        <p className="text-slate-400 text-sm">We focus on customer conversion and business growth, not just visual design.</p>
-      </motion.div>
-      {/* Card 2 */}
-      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
-        <h3 className="text-xl font-bold text-white mb-2">Modern Digital Infrastructure</h3>
-        <p className="text-slate-400 text-sm">We integrate websites, advertising, and automation into one connected system.</p>
-      </motion.div>
-      {/* Card 3 */}
-      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
-        <h3 className="text-xl font-bold text-white mb-2">Fast & Flexible Process</h3>
-        <p className="text-slate-400 text-sm">We provide fast-moving and adaptable solutions without slow traditional agency workflows.</p>
-      </motion.div>
-      {/* Card 4 */}
-      <motion.div whileHover={{ scale: 1.03 }} className="glass p-6 rounded-3xl border border-white/5 bg-white/[0.02] transition-shadow hover:shadow-xl">
-        <h3 className="text-xl font-bold text-white mb-2">Branding + Performance</h3>
-        <p className="text-slate-400 text-sm">We help brands look premium while also improving customer engagement and conversion.</p>
-      </motion.div>
-    </div>
-  </div>
-</motion.section>
-        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-purple mb-8 block font-bold"
-          >
-            Vizyonumuz
-          </motion.span>
-          <h2 className="text-4xl md:text-7xl font-bold mb-12 text-white tracking-tighter leading-tight font-display">Yaratıcılığın <br /> Performansla Buluştuğu Nokta</h2>
-          <p className="text-xl text-slate-400 leading-relaxed mb-16 font-medium">
-            Mono Digital, modern markalar için yaratıcı ve performans odaklı dijital çözümler üreten 
-            yeni nesil bir dijital ajanstır. Tasarım, reklam ve dijital stratejiyi bir araya 
-            getirerek markaların dijitalde daha güçlü görünmesini sağlıyoruz.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-             {[
-               { label: "Yaratıcı Tasarım", color: "brand-blue" },
-               { label: "Modern Altyapı", color: "brand-purple" },
-               { label: "Stratejik Yaklaşım", color: "white" }
-             ].map((item, i) => (
-               <motion.div 
-                 key={i}
-                 whileHover={{ scale: 1.05 }}
-                 className="p-12 bg-white/[0.02] border border-white/5 rounded-[3rem] backdrop-blur-xl group hover:border-white/20 transition-all font-display"
-               >
-                 <span className={`font-mono text-xs tracking-widest uppercase mb-4 block font-bold ${i === 0 ? 'text-brand-blue' : i === 1 ? 'text-brand-purple' : 'text-white'}`}>{item.label}</span>
-                 <div className={`w-12 h-px mx-auto opacity-30 ${i === 0 ? 'bg-brand-blue' : i === 1 ? 'bg-brand-purple' : 'bg-white'}`} />
-               </motion.div>
-             ))}
+      <motion.section 
+        id="hakkımızda" 
+        className="py-32 px-6 relative overflow-hidden"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-purple mb-4 block font-bold text-glow"
+            >
+              Neden Biz?
+            </motion.span>
+            <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display">
+              Why Mono Digital?
+            </h2>
+            <p className="text-brand-purple font-display text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8 leading-relaxed">
+              “We build digital systems focused on growth, visibility, and customer conversion.”
+            </p>
+            <p className="text-slate-400 max-w-3xl mx-auto text-sm md:text-base font-medium leading-relaxed">
+              At Mono Digital, we focus on more than just aesthetics. We create digital systems designed to help businesses look more professional, generate more leads, and convert more customers. By combining web design, advertising, and automation into one streamlined structure, we help brands build a stronger digital presence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: CheckCircle2,
+                title: "Results-Driven Approach",
+                desc: "We focus on customer conversion and business growth, not just visual design.",
+                borderColor: "hover:border-brand-blue/40",
+                glowColor: "bg-brand-blue/5 blur-[40px] group-hover:bg-brand-blue/10",
+                iconColor: "text-brand-blue group-hover:scale-110",
+                iconBg: "group-hover:bg-brand-blue/10 group-hover:border-brand-blue/20"
+              },
+              {
+                icon: Cpu,
+                title: "Modern Digital Infrastructure",
+                desc: "We integrate websites, advertising, and automation into one connected system.",
+                borderColor: "hover:border-brand-purple/40",
+                glowColor: "bg-brand-purple/5 blur-[40px] group-hover:bg-brand-purple/10",
+                iconColor: "text-brand-purple group-hover:scale-110",
+                iconBg: "group-hover:bg-brand-purple/10 group-hover:border-brand-purple/20"
+              },
+              {
+                icon: Zap,
+                title: "Fast & Flexible Process",
+                desc: "We provide fast-moving and adaptable solutions without slow traditional agency workflows.",
+                borderColor: "hover:border-brand-blue/40",
+                glowColor: "bg-brand-blue/5 blur-[40px] group-hover:bg-brand-blue/10",
+                iconColor: "text-brand-blue group-hover:scale-110",
+                iconBg: "group-hover:bg-brand-blue/10 group-hover:border-brand-blue/20"
+              },
+              {
+                icon: Network,
+                title: "Branding + Performance",
+                desc: "We help brands look premium while also improving customer engagement and conversion.",
+                borderColor: "hover:border-brand-purple/40",
+                glowColor: "bg-brand-purple/5 blur-[40px] group-hover:bg-brand-purple/10",
+                iconColor: "text-brand-purple group-hover:scale-110",
+                iconBg: "group-hover:bg-brand-purple/10 group-hover:border-brand-purple/20"
+              }
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className={`glass p-8 rounded-[2.5rem] group border border-white/5 ${card.borderColor} transition-all duration-500 cursor-default relative overflow-hidden`}
+              >
+                {/* Glow Effect */}
+                <div className={`absolute -right-10 -top-10 w-32 h-32 ${card.glowColor} rounded-full transition-all duration-500`} />
+                
+                {/* Icon Container */}
+                <div className={`w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/5 ${card.iconBg} transition-all duration-500`}>
+                  <card.icon className={`${card.iconColor} transition-all duration-500`} size={24} />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3 text-white font-display tracking-tight group-hover:text-glow transition-all duration-500">
+                  {card.title}
+                </h3>
+                <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                  {card.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       <section className="py-24 px-6 relative overflow-hidden">
