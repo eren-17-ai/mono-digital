@@ -550,13 +550,14 @@ export default function App() {
               Neden Biz?
             </motion.span>
             <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display">
-              Why Mono Digital?
+              Neden Mono Dijital?
             </h2>
             <p className="text-brand-purple font-display text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8 leading-relaxed">
-              “We build digital systems focused on growth, visibility, and customer conversion.”
+              “Büyüme, görünürlük ve müşteri dönüşümü odaklı dijital sistemler kuruyoruz.”
             </p>
-            <p className="text-slate-400 max-w-3xl mx-auto text-sm md:text-base font-medium leading-relaxed">
-              At Mono Digital, we focus on more than just aesthetics. We create digital systems designed to help businesses look more professional, generate more leads, and convert more customers. By combining web design, advertising, and automation into one streamlined structure, we help brands build a stronger digital presence.
+            <p className="text-slate-400 max-w-3xl mx-auto text-sm md:text-base font-medium leading-relaxed whitespace-pre-line">
+              Mono Dijital olarak yalnızca estetik tasarıma değil, işletmelerin daha profesyonel görünmesine, daha fazla potansiyel müşteri kazanmasına ve daha fazla dönüşüm elde etmesine odaklanıyoruz.
+              Web sitesi, reklam yönetimi ve otomasyon sistemlerini tek bir dijital yapı altında birleştirerek markaların dijitalde daha güçlü görünmesini sağlıyoruz.
             </p>
           </div>
 
@@ -564,8 +565,8 @@ export default function App() {
             {[
               {
                 icon: CheckCircle2,
-                title: "Results-Driven Approach",
-                desc: "We focus on customer conversion and business growth, not just visual design.",
+                title: "Sonuç Odaklı Yaklaşım",
+                desc: "Sadece tasarım değil, müşteri dönüşümü ve işletme büyümesi odaklı sistemler kuruyoruz.",
                 borderColor: "hover:border-brand-blue/40",
                 glowColor: "bg-brand-blue/5 blur-[40px] group-hover:bg-brand-blue/10",
                 iconColor: "text-brand-blue group-hover:scale-110",
@@ -573,8 +574,8 @@ export default function App() {
               },
               {
                 icon: Cpu,
-                title: "Modern Digital Infrastructure",
-                desc: "We integrate websites, advertising, and automation into one connected system.",
+                title: "Modern Dijital Altyapı",
+                desc: "Web sitesi, reklam ve otomasyon sistemlerini entegre şekilde planlıyoruz.",
                 borderColor: "hover:border-brand-purple/40",
                 glowColor: "bg-brand-purple/5 blur-[40px] group-hover:bg-brand-purple/10",
                 iconColor: "text-brand-purple group-hover:scale-110",
@@ -582,8 +583,8 @@ export default function App() {
               },
               {
                 icon: Zap,
-                title: "Fast & Flexible Process",
-                desc: "We provide fast-moving and adaptable solutions without slow traditional agency workflows.",
+                title: "Hızlı ve Esnek Süreç",
+                desc: "Yavaş ajans süreçleri yerine hızlı ve dinamik çözümler sunuyoruz.",
                 borderColor: "hover:border-brand-blue/40",
                 glowColor: "bg-brand-blue/5 blur-[40px] group-hover:bg-brand-blue/10",
                 iconColor: "text-brand-blue group-hover:scale-110",
@@ -591,8 +592,8 @@ export default function App() {
               },
               {
                 icon: Network,
-                title: "Branding + Performance",
-                desc: "We help brands look premium while also improving customer engagement and conversion.",
+                title: "Marka + Performans",
+                desc: "Markanızın hem premium görünmesini hem de daha fazla dönüşüm üretmesini hedefliyoruz.",
                 borderColor: "hover:border-brand-purple/40",
                 glowColor: "bg-brand-purple/5 blur-[40px] group-hover:bg-brand-purple/10",
                 iconColor: "text-brand-purple group-hover:scale-110",
