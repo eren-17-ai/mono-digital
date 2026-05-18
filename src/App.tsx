@@ -1,14 +1,14 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { 
-  Zap, 
-  Cpu, 
-  Network, 
-  Bot, 
-  Database, 
-  Globe, 
-  ArrowRight, 
-  CheckCircle2, 
-  Menu, 
+import {
+  Zap,
+  Cpu,
+  Network,
+  Bot,
+  Database,
+  Globe,
+  ArrowRight,
+  CheckCircle2,
+  Menu,
   X,
   Linkedin,
   Twitter,
@@ -27,27 +27,27 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between glass rounded-[1.5rem] px-8 py-4">
         <div className="flex items-center gap-4">
-          <img 
-            src="/logo.jpeg" 
-            alt="Mono Digital Logo" 
+          <img
+            src="/logo.jpeg"
+            alt="Mono Digital Logo"
             className="w-10 h-10 rounded-xl object-cover"
             referrerPolicy="no-referrer"
           />
           <span className="font-display text-lg tracking-tighter text-white font-bold hidden sm:block">Mono Digital</span>
         </div>
-        
+
         <div className="hidden md:flex items-center gap-10">
           {['Ana Sayfa', 'Hizmetler', 'Paketler', 'Hakkımızda'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase().replace(' ', '-')}`} 
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(' ', '-')}`}
               className="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
             >
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-blue group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <a 
+          <a
             href="#contact-details"
             className="bg-white text-black hover:bg-brand-blue hover:text-white px-8 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer font-display uppercase tracking-wider inline-block"
           >
@@ -61,22 +61,22 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden mt-2 glass rounded-[1.5rem] p-6 flex flex-col gap-4"
         >
           {['Ana Sayfa', 'Hizmetler', 'Paketler', 'Hakkımızda'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase().replace(' ', '-')}`} 
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(' ', '-')}`}
               className="text-lg font-medium text-slate-400 font-display"
               onClick={() => setIsOpen(false)}
             >
               {item}
             </a>
           ))}
-          <a 
+          <a
             href="#contact-details"
             className="bg-white text-black w-full py-4 rounded-xl font-bold font-display uppercase tracking-wider cursor-pointer text-center inline-block"
             onClick={() => setIsOpen(false)}
@@ -93,14 +93,14 @@ const Background = () => {
   return (
     <div className="fixed inset-0 -z-10 bg-brand-dark overflow-hidden">
       {/* Grid Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]" 
-        style={{ 
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
           backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
           backgroundSize: '80px 80px'
         }}
       />
-      
+
       {/* Moving Particles */}
       {[...Array(12)].map((_, i) => (
         <motion.div
@@ -169,25 +169,25 @@ export default function App() {
             className="relative mb-12"
           >
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -10, 0],
               }}
-              transition={{ 
-                duration: 4, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
               className="relative z-10"
             >
-              <img 
-                src="/logo.jpeg" 
-                alt="Mono Digital Hero Logo" 
+              <img
+                src="/logo.jpeg"
+                alt="Mono Digital Hero Logo"
                 className="w-32 h-32 md:w-48 md:h-48 rounded-[2.5rem] object-cover shadow-2xl border border-white/10 hover:border-brand-blue/50 transition-colors duration-500 cursor-pointer"
                 referrerPolicy="no-referrer"
               />
               {/* Soft Pulse Glow */}
-              <motion.div 
-                animate={{ 
+              <motion.div
+                animate={{
                   scale: [1, 1.1, 1],
                   opacity: [0.2, 0.4, 0.2]
                 }}
@@ -206,7 +206,7 @@ export default function App() {
             <span className="w-1.5 h-1.5 bg-brand-blue rounded-full animate-ping" />
             <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-blue-400 font-bold">Premium Digital Studio</span>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -223,7 +223,7 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="max-w-2xl text-base md:text-lg text-slate-400 mb-10 leading-relaxed font-normal"
           >
-            Tasarım, strateji ve dijital performansı tek bir yapıda birleştiriyoruz. 
+            Tasarım, strateji ve dijital performansı tek bir yapıda birleştiriyoruz.
             Mono Digital, markanızın geleceğini bugünden inşa eden kreatif çözüm ortağınızdır.
           </motion.p>
 
@@ -233,7 +233,7 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a 
+            <a
               href="#contact-details"
               className="bg-white text-black px-10 py-3.5 rounded-full font-bold text-base hover:bg-brand-blue hover:text-white transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] cursor-pointer inline-block uppercase tracking-wider font-display"
             >
@@ -243,139 +243,139 @@ export default function App() {
               Hizmetleri İncele
             </button>
           </motion.div>
-          
+
           {/* Digital Growth System Visual */}
           <div className="relative w-full max-w-6xl mt-24 min-h-[400px] md:min-h-[500px] glass rounded-[3rem] overflow-hidden border-white/5 shadow-2xl p-4 md:p-12 group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/5 via-transparent to-brand-purple/5 opacity-50" />
-              
-              {/* Connection Lines (Desktop Only) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20 hidden lg:block">
-                <motion.path 
-                  d="M 250 250 Q 400 250 450 200" 
-                  stroke="white" strokeWidth="1" fill="none" strokeDasharray="4 4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <motion.path 
-                  d="M 650 200 Q 750 200 850 300" 
-                  stroke="white" strokeWidth="1" fill="none" strokeDasharray="4 4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                />
-              </svg>
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/5 via-transparent to-brand-purple/5 opacity-50" />
 
-              <div className="relative h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-                
-                {/* 1. Website Card */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  whileHover={{ y: -5 }}
-                  className="glass p-5 rounded-3xl border-white/10 flex flex-col gap-4 bg-white/[0.02]"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Globe size={14} className="text-brand-blue" />
-                    <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Modern_Web_Sitesi</span>
-                  </div>
-                  <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/5 overflow-hidden p-2">
-                     <div className="h-2 w-12 bg-white/10 rounded-full mb-3" />
-                     <div className="space-y-2">
-                        <div className="h-1.5 w-full bg-white/5 rounded-full" />
-                        <div className="h-1.5 w-4/5 bg-white/5 rounded-full" />
-                        <div className="h-1.5 w-3/4 bg-white/5 rounded-full" />
-                     </div>
-                     <div className="mt-4 h-12 w-full bg-brand-blue/10 rounded-lg flex items-center justify-center">
-                        <div className="w-8 h-1 bg-brand-blue/40 rounded-full" />
-                     </div>
-                  </div>
-                </motion.div>
+            {/* Connection Lines (Desktop Only) */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20 hidden lg:block">
+              <motion.path
+                d="M 250 250 Q 400 250 450 200"
+                stroke="white" strokeWidth="1" fill="none" strokeDasharray="4 4"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <motion.path
+                d="M 650 200 Q 750 200 850 300"
+                stroke="white" strokeWidth="1" fill="none" strokeDasharray="4 4"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              />
+            </svg>
 
-                {/* 2. Meta Ads Card */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ y: -5 }}
-                  className="glass p-5 rounded-3xl border-white/10 flex flex-col gap-4 bg-white/[0.02]"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Zap size={14} className="text-brand-purple" />
-                    <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Meta_Ads_Manager</span>
-                  </div>
-                  <div className="space-y-4">
-                     <div className="p-3 bg-zinc-900/50 rounded-xl border border-white/5">
-                        <div className="text-[9px] text-zinc-500 font-bold mb-1">CTR</div>
-                        <div className="text-lg font-bold text-white font-display">2.48%</div>
-                        <div className="h-1 w-full bg-zinc-800 rounded-full mt-2 overflow-hidden">
-                           <motion.div animate={{ width: "65%" }} transition={{ duration: 2 }} className="h-full bg-brand-purple" />
-                        </div>
-                     </div>
-                     <div className="p-3 bg-zinc-900/50 rounded-xl border border-white/5">
-                        <div className="text-[9px] text-zinc-500 font-bold mb-1">CPA</div>
-                        <div className="text-lg font-bold text-white font-display">12.50₺</div>
-                     </div>
-                  </div>
-                </motion.div>
+            <div className="relative h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
 
-                {/* 3. Leads Flow Visual */}
-                <div className="lg:col-span-1 flex flex-col justify-center items-center gap-4 relative">
-                   <div className="text-[9px] font-mono font-bold tracking-[0.3em] text-zinc-600 uppercase mb-4">Lead_Flow</div>
-                   <div className="space-y-3 w-full">
-                      {[1, 2, 3].map((i) => (
-                        <motion.div 
-                          key={i}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: [0, 1, 0], y: -20 }}
-                          transition={{ duration: 2, repeat: Infinity, delay: i * 0.6 }}
-                          className="w-full p-3 glass rounded-xl border-white/5 flex items-center justify-between"
-                        >
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                            <div className="h-1.5 w-16 bg-white/10 rounded-full" />
-                          </div>
-                          <ArrowRight size={10} className="text-zinc-600" />
-                        </motion.div>
-                      ))}
-                   </div>
+              {/* 1. Website Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ y: -5 }}
+                className="glass p-5 rounded-3xl border-white/10 flex flex-col gap-4 bg-white/[0.02]"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Globe size={14} className="text-brand-blue" />
+                  <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Modern_Web_Sitesi</span>
+                </div>
+                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/5 overflow-hidden p-2">
+                  <div className="h-2 w-12 bg-white/10 rounded-full mb-3" />
+                  <div className="space-y-2">
+                    <div className="h-1.5 w-full bg-white/5 rounded-full" />
+                    <div className="h-1.5 w-4/5 bg-white/5 rounded-full" />
+                    <div className="h-1.5 w-3/4 bg-white/5 rounded-full" />
+                  </div>
+                  <div className="mt-4 h-12 w-full bg-brand-blue/10 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-1 bg-brand-blue/40 rounded-full" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 2. Meta Ads Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ y: -5 }}
+                className="glass p-5 rounded-3xl border-white/10 flex flex-col gap-4 bg-white/[0.02]"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap size={14} className="text-brand-purple" />
+                  <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Meta_Ads_Manager</span>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-3 bg-zinc-900/50 rounded-xl border border-white/5">
+                    <div className="text-[9px] text-zinc-500 font-bold mb-1">CTR</div>
+                    <div className="text-lg font-bold text-white font-display">2.48%</div>
+                    <div className="h-1 w-full bg-zinc-800 rounded-full mt-2 overflow-hidden">
+                      <motion.div animate={{ width: "65%" }} transition={{ duration: 2 }} className="h-full bg-brand-purple" />
+                    </div>
+                  </div>
+                  <div className="p-3 bg-zinc-900/50 rounded-xl border border-white/5">
+                    <div className="text-[9px] text-zinc-500 font-bold mb-1">CPA</div>
+                    <div className="text-lg font-bold text-white font-display">12.50₺</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 3. Leads Flow Visual */}
+              <div className="lg:col-span-1 flex flex-col justify-center items-center gap-4 relative">
+                <div className="text-[9px] font-mono font-bold tracking-[0.3em] text-zinc-600 uppercase mb-4">Lead_Flow</div>
+                <div className="space-y-3 w-full">
+                  {[1, 2, 3].map((i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: [0, 1, 0], y: -20 }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.6 }}
+                      className="w-full p-3 glass rounded-xl border-white/5 flex items-center justify-between"
+                    >
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500/50" />
+                        <div className="h-1.5 w-16 bg-white/10 rounded-full" />
+                      </div>
+                      <ArrowRight size={10} className="text-zinc-600" />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 4. WhatsApp & Performance */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ y: -5 }}
+                className="space-y-4 h-full"
+              >
+                <div className="glass p-5 rounded-3xl border-white/10 bg-white/[0.02]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <MessageCircle size={14} className="text-green-500" />
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Conversion</span>
+                  </div>
+                  <div className="bg-green-500/10 p-3 rounded-2xl rounded-tr-none border border-green-500/20 max-w-[80%]">
+                    <p className="text-[10px] text-green-200">Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.</p>
+                  </div>
                 </div>
 
-                {/* 4. WhatsApp & Performance */}
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  whileHover={{ y: -5 }}
-                  className="space-y-4 h-full"
-                >
-                  <div className="glass p-5 rounded-3xl border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2 mb-4">
-                      <MessageCircle size={14} className="text-green-500" />
-                      <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Conversion</span>
-                    </div>
-                    <div className="bg-green-500/10 p-3 rounded-2xl rounded-tr-none border border-green-500/20 max-w-[80%]">
-                       <p className="text-[10px] text-green-200">Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.</p>
-                    </div>
+                <div className="glass p-5 rounded-3xl border-white/10 bg-white/[0.02] flex-1">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Database size={14} className="text-brand-blue" />
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Performance</span>
                   </div>
-                  
-                  <div className="glass p-5 rounded-3xl border-white/10 bg-white/[0.02] flex-1">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Database size={14} className="text-brand-blue" />
-                      <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-500 uppercase">Performance</span>
-                    </div>
-                    <div className="flex items-end gap-1 h-12 mt-2">
-                       {[0.3, 0.6, 0.4, 0.8, 0.9].map((h, i) => (
-                         <motion.div 
-                           key={i}
-                           initial={{ height: 0 }}
-                           animate={{ height: `${h * 100}%` }}
-                           className="flex-1 bg-brand-blue/30 rounded-t-sm"
-                         />
-                       ))}
-                    </div>
+                  <div className="flex items-end gap-1 h-12 mt-2">
+                    {[0.3, 0.6, 0.4, 0.8, 0.9].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h * 100}%` }}
+                        className="flex-1 bg-brand-blue/30 rounded-t-sm"
+                      />
+                    ))}
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -384,7 +384,7 @@ export default function App() {
       <section id="hizmetler" className="py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-blue mb-4 block font-bold"
@@ -393,7 +393,7 @@ export default function App() {
             </motion.span>
             <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display">Hizmetlerimiz</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base font-medium leading-relaxed">
-              Modern dünyada markanızın dijital varlığını güçlendirecek, 
+              Modern dünyada markanızın dijital varlığını güçlendirecek,
               veriye dayalı ve kreatif odaklı profesyonel çözümler sunuyoruz.
             </p>
           </div>
@@ -440,17 +440,17 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { 
-                title: "Web Site Kurulumu", 
+              {
+                title: "Web Site Kurulumu",
                 oldPrice: "10.000 TL",
-                price: "8.000 TL",
+                price: "6.000 TL",
                 subtitle: "Tek Seferlik Kurulum",
                 features: ["Modern web tasarımı", "Mobil uyumlu yapı", "SEO altyapısı", "Hızlı teslimat"],
                 color: "brand-blue",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Web%20Site%20Kurulumu%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
               },
-              { 
-                title: "Dijital Sistem Paketi", 
+              {
+                title: "Dijital Sistem Paketi",
                 oldPrice: "17.500 TL",
                 price: "10.000 TL",
                 period: "/ Ay",
@@ -460,8 +460,8 @@ export default function App() {
                 color: "brand-purple",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
               },
-              { 
-                title: "Reklam Yönetimi", 
+              {
+                title: "Reklam Yönetimi",
                 oldPrice: "7.500 TL",
                 price: "5.000 TL",
                 period: "/ Ay",
@@ -480,7 +480,7 @@ export default function App() {
                 className={`glass p-12 rounded-[3rem] border-white/5 ${pkg.highlight ? 'ring-2 ring-brand-purple/30 glow-purple bg-brand-purple/[0.02]' : ''} relative flex flex-col`}
               >
                 {pkg.highlight && (
-                   <span className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">En Çok Tercih Edilen</span>
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">En Çok Tercih Edilen</span>
                 )}
                 <h3 className="text-2xl font-bold mb-1 text-white font-display">{pkg.title}</h3>
                 {pkg.subtitle && (
@@ -488,7 +488,7 @@ export default function App() {
                     {pkg.subtitle}
                   </div>
                 )}
-                
+
                 <div className="mb-8 flex flex-col">
                   {pkg.oldPrice && (
                     <span className="text-slate-500 text-sm line-through opacity-50 font-mono mb-1">
@@ -515,7 +515,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <a 
+                <a
                   href={pkg.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -530,8 +530,8 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <motion.section 
-        id="hakkımızda" 
+      <motion.section
+        id="hakkımızda"
         className="py-32 px-6 relative overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -540,7 +540,7 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -611,12 +611,12 @@ export default function App() {
               >
                 {/* Glow Effect */}
                 <div className={`absolute -right-10 -top-10 w-32 h-32 ${card.glowColor} rounded-full transition-all duration-500`} />
-                
+
                 {/* Icon Container */}
                 <div className={`w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/5 ${card.iconBg} transition-all duration-500`}>
                   <card.icon className={`${card.iconColor} transition-all duration-500`} size={24} />
                 </div>
-                
+
                 <h3 className="text-xl font-bold mb-3 text-white font-display tracking-tight group-hover:text-glow transition-all duration-500">
                   {card.title}
                 </h3>
@@ -638,7 +638,7 @@ export default function App() {
             { label: "Hızlı İletişim", value: "24/7" },
             { label: "Ölçülebilir Başarı", value: "KPI" }
           ].map((stat, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -657,7 +657,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto glass rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden border-brand-blue/20 group">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-purple/10 group-hover:opacity-70 transition-opacity" />
           <div className="relative z-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-8xl font-bold mb-10 text-white tracking-tighter font-display leading-[0.9]"
@@ -665,7 +665,7 @@ export default function App() {
               Markanızı Bir Sonraki <br /> Seviyeye Taşıyın.
             </motion.h2>
             <p className="text-slate-400 text-lg md:text-2xl mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
-              Bizimle çalışarak markanızın dijital dünyada fark yaratmasını sağlayın. 
+              Bizimle çalışarak markanızın dijital dünyada fark yaratmasını sağlayın.
               Uzman ekibimizle iletişime geçmek için hemen randevu alın.
             </p>
             <button className="bg-white text-black hover:bg-brand-blue hover:text-white hover:shadow-[0_0_50px_rgba(79,70,229,0.5)] px-16 py-6 rounded-2xl font-bold text-2xl transition-all flex items-center gap-4 mx-auto cursor-pointer group/btn font-display uppercase tracking-widest">
@@ -681,20 +681,20 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-20 relative z-10">
           <div className="md:col-span-5">
             <div className="flex items-center gap-4 mb-10">
-              <img 
-                src="/logo.jpeg" 
-                alt="Mono Digital Logo" 
+              <img
+                src="/logo.jpeg"
+                alt="Mono Digital Logo"
                 className="w-14 h-14 rounded-[1rem] object-cover shadow-2xl"
                 referrerPolicy="no-referrer"
               />
               <span className="font-display text-2xl tracking-tighter text-white font-bold">Mono Digital</span>
             </div>
             <p className="text-slate-500 max-w-sm leading-relaxed text-lg font-medium">
-              Modern markalar için yaratıcı ve performans odaklı dijital çözümler üreten 
+              Modern markalar için yaratıcı ve performans odaklı dijital çözümler üreten
               yeni nesil dijital mimarlık. Dijitalde gücünüzü bizimle keşfedin.
             </p>
           </div>
-          
+
           <div className="md:col-span-2">
             <h4 className="font-bold text-white mb-10 text-xl font-display">Keşfet</h4>
             <ul className="space-y-6 text-slate-500 font-medium text-base">
@@ -708,30 +708,30 @@ export default function App() {
           <div id="contact-details" className="md:col-span-3">
             <h4 className="font-bold text-white mb-10 text-xl font-display">İletişim</h4>
             <div className="flex gap-4 mb-10">
-              <a 
-                href="https://instagram.com/mono_digital_35" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com/mono_digital_35"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-4 glass rounded-2xl hover:bg-white/10 text-white group hover:-translate-y-1.5 hover:glow-blue transition-all duration-300"
               >
                 <Instagram size={24} className="group-hover:scale-110 transition-transform" />
               </a>
-              <a 
-                href="https://wa.me/905055784272" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://wa.me/905055784272"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-4 glass rounded-2xl hover:bg-white/10 text-white group hover:-translate-y-1.5 hover:glow-purple transition-all duration-300"
               >
                 <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
               </a>
             </div>
-            <a 
+            <a
               href="mailto:erenmediax35@gmail.com"
               className="text-base font-mono text-slate-400 font-bold uppercase tracking-widest hover:text-brand-blue transition-colors cursor-pointer block"
             >
               erenmediax35@gmail.com
             </a>
-            <a 
+            <a
               href="tel:+905055784272"
               className="text-base font-mono text-slate-400 font-bold uppercase tracking-widest hover:text-brand-blue transition-colors cursor-pointer block mt-4"
             >
