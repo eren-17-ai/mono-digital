@@ -443,7 +443,7 @@ export default function App() {
               {
                 title: "Web Site Kurulumu",
                 oldPrice: "10.000 TL",
-                price: "6.000 TL",
+                price: "8.000 TL",
                 subtitle: "Tek Seferlik Kurulum",
                 features: ["Modern web tasarımı", "Mobil uyumlu yapı", "SEO altyapısı", "Hızlı teslimat"],
                 color: "brand-blue",
