@@ -239,9 +239,12 @@ export default function App() {
             >
               İletişime Geç
             </a>
-            <button className="glass px-10 py-3.5 rounded-full font-bold text-base border border-zinc-700 text-white hover:border-brand-purple transition-all cursor-pointer inline-block uppercase tracking-wider font-display">
+            <a
+              href="#hizmetler"
+              className="glass px-10 py-3.5 rounded-full font-bold text-base border border-zinc-700 text-white hover:border-brand-purple transition-all cursor-pointer inline-block uppercase tracking-wider font-display"
+            >
               Hizmetleri İncele
-            </button>
+            </a>
           </motion.div>
 
           {/* Digital Growth System Visual */}
@@ -628,53 +631,6 @@ export default function App() {
           </div>
         </div>
       </motion.section>
-
-      {/* Stats Section */}
-      <section className="py-24 px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-          {[
-            { label: "Yaratıcı Mimari", value: "Stratejik" },
-            { label: "Modern Altyapı", value: "Güncel" },
-            { label: "Hızlı İletişim", value: "24/7" },
-            { label: "Ölçülebilir Başarı", value: "KPI" }
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="glass p-8 rounded-3xl border-white/5"
-            >
-              <div className="text-4xl md:text-6xl font-bold text-white mb-2 tracking-tighter">{stat.value}</div>
-              <div className="text-[10px] font-mono tracking-widest uppercase text-slate-500 font-bold">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="iletişim" className="py-32 px-6">
-        <div className="max-w-6xl mx-auto glass rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden border-brand-blue/20 group">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-purple/10 group-hover:opacity-70 transition-opacity" />
-          <div className="relative z-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-8xl font-bold mb-10 text-white tracking-tighter font-display leading-[0.9]"
-            >
-              Markanızı Bir Sonraki <br /> Seviyeye Taşıyın.
-            </motion.h2>
-            <p className="text-slate-400 text-lg md:text-2xl mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
-              Bizimle çalışarak markanızın dijital dünyada fark yaratmasını sağlayın.
-              Uzman ekibimizle iletişime geçmek için hemen randevu alın.
-            </p>
-            <button className="bg-white text-black hover:bg-brand-blue hover:text-white hover:shadow-[0_0_50px_rgba(79,70,229,0.5)] px-16 py-6 rounded-2xl font-bold text-2xl transition-all flex items-center gap-4 mx-auto cursor-pointer group/btn font-display uppercase tracking-widest">
-              Bizimle Çalışın <ArrowRight className="group-hover/btn:translate-x-2 transition-transform" size={32} />
-            </button>
-          </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-blue/10 blur-[150px] rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-32 px-6 border-t border-white/5 bg-[#030303] relative overflow-hidden">
