@@ -446,7 +446,7 @@ export default function App() {
               {
                 title: "Web Site Kurulumu",
                 oldPrice: "10.000 TL",
-                price: "8.000 TL",
+                price: "7.000 TL",
                 subtitle: "Tek Seferlik Kurulum",
                 features: ["Modern web tasarımı", "Mobil uyumlu yapı", "SEO altyapısı", "Hızlı teslimat"],
                 color: "brand-blue",
@@ -455,10 +455,10 @@ export default function App() {
               {
                 title: "Dijital Sistem Paketi",
                 oldPrice: "17.500 TL",
-                price: "10.000 TL",
+                price: "14.000 TL",
                 period: "/ Ay",
                 subtitle: "Web + Reklam + Otomasyon",
-                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek"],
+                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama"],
                 highlight: true,
                 color: "brand-purple",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
@@ -466,10 +466,10 @@ export default function App() {
               {
                 title: "Reklam Yönetimi",
                 oldPrice: "7.500 TL",
-                price: "5.000 TL",
+                price: "8.000 TL",
                 period: "/ Ay",
                 subtitle: "Aylık Yönetim",
-                features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu"],
+                features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu", "Video çekimleri", "Reklam kreatifleri", "Profesyonel edit"],
                 color: "brand-blue",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Reklam%20Y%C3%B6netimi%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
               }
