@@ -445,11 +445,10 @@ export default function App() {
             <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display">Çözüm Paketleri</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 items-stretch">
             {[
               {
                 title: "Web Site Kurulumu",
-                oldPrice: "10.000 TL",
                 price: "7.000 TL",
                 subtitle: "Tek Seferlik Kurulum",
                 features: ["Modern web tasarımı", "Mobil uyumlu yapı", "SEO altyapısı", "Hızlı teslimat"],
@@ -458,8 +457,7 @@ export default function App() {
               },
               {
                 title: "Dijital Sistem Paketi",
-                oldPrice: "17.500 TL",
-                price: "14.000 TL",
+                price: "10.000 TL",
                 period: "/ Ay",
                 subtitle: "Web + Reklam + Otomasyon",
                 features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama"],
@@ -469,8 +467,7 @@ export default function App() {
               },
               {
                 title: "Reklam Yönetimi",
-                oldPrice: "10.000 TL",
-                price: "8.000 TL",
+                price: "6.000 TL",
                 period: "/ Ay",
                 subtitle: "Aylık Yönetim",
                 features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu", "Video çekimleri", "Reklam kreatifleri", "Profesyonel edit"],
@@ -484,10 +481,10 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`glass p-5 md:p-12 rounded-[1.75rem] md:rounded-[3rem] border-white/5 ${pkg.highlight ? 'ring-2 ring-brand-purple/30 glow-purple bg-brand-purple/[0.02]' : ''} relative flex flex-col`}
+                className={`glass p-6 md:p-12 rounded-[1.75rem] md:rounded-[3rem] border-white/5 ${pkg.highlight ? 'ring-2 ring-brand-purple/50 glow-purple bg-brand-purple/[0.05] lg:-translate-y-4' : ''} relative flex flex-col`}
               >
                 {pkg.highlight && (
-                  <span className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-2 md:px-4 py-1 bg-brand-purple text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-full whitespace-nowrap">En Çok Tercih Edilen</span>
+                  <span className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-3 md:px-4 py-1.5 bg-brand-purple text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest rounded-full whitespace-nowrap shadow-[0_0_24px_rgba(147,51,234,0.45)]">En Çok Tercih Edilen</span>
                 )}
                 <h3 className="text-lg md:text-2xl font-bold mb-1 text-white font-display leading-tight">{pkg.title}</h3>
                 {pkg.subtitle && (
@@ -497,17 +494,12 @@ export default function App() {
                 )}
 
                 <div className="mb-5 md:mb-8 flex flex-col">
-                  {pkg.oldPrice && (
-                    <span className="text-slate-500 text-xs md:text-sm line-through opacity-50 font-mono mb-1">
-                      {pkg.oldPrice}
-                    </span>
-                  )}
                   <div className="flex flex-wrap items-baseline gap-1">
-                    <span className="text-2xl md:text-4xl font-bold text-white tracking-tighter font-display">
+                    <span className={`${pkg.highlight ? 'text-3xl md:text-5xl text-white' : 'text-3xl md:text-4xl text-white'} font-bold tracking-tight font-display leading-none`}>
                       {pkg.price}
                     </span>
                     {pkg.period && (
-                      <span className="text-slate-400 text-xs md:text-sm font-medium">
+                      <span className="text-slate-400 text-sm md:text-base font-semibold">
                         {pkg.period}
                       </span>
                     )}
