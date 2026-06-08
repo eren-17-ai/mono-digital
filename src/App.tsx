@@ -6,6 +6,8 @@ import {
   Bot,
   Database,
   Globe,
+  Camera,
+  Clapperboard,
   ArrowRight,
   CheckCircle2,
   Menu,
@@ -401,14 +403,16 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-left">
             {[
               { icon: Zap, title: "Meta Reklam Yönetimi", desc: "Facebook ve Instagram'da hedef odaklı stratejilerle maksimum dönüşüm sağlıyoruz." },
               { icon: Globe, title: "Web Tasarım", desc: "Hızlı, kullanıcı dostu ve prestijli web deneyimleri tasarlıyoruz." },
               { icon: Bot, title: "Otomasyon Kurulumu", desc: "İş süreçlerinizi hızlandıran, müşteri takibini ve operasyonları otomatikleştiren sistemler kuruyoruz." },
               { icon: Network, title: "Marka Kimliği", desc: "Markanızın görsel dünyasını baştan aşağıya kurumsal bir yapıda kurguluyoruz." },
               { icon: ArrowRight, title: "Performans Pazarlama", desc: "Sürdürülebilir büyüme stratejileri ile dönüşüm oranlarınızı maksimize ediyoruz." },
-              { icon: Database, title: "Dijital Danışmanlık", desc: "Dijital büyüme stratejilerinizde uzman görüşümüzle yanınızdayız." }
+              { icon: Database, title: "Dijital Danışmanlık", desc: "Dijital büyüme stratejilerinizde uzman görüşümüzle yanınızdayız." },
+              { icon: Camera, title: "Profesyonel Kamera Çekimleri", desc: "Markanızın vizyonunu yansıtan, yüksek kaliteli ve profesyonel ekipmanlarla gerçekleştirilen dinamik video çekimleri sunuyoruz." },
+              { icon: Clapperboard, title: "Profesyonel Edit", desc: "Çekilen ham görüntüleri akıcı, dikkat çekici ve sosyal medya trendlerine uygun kreatif kurgularla yüksek dönüşümlü videolara dönüştürüyoruz." }
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -417,14 +421,14 @@ export default function App() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="glass p-10 rounded-[2.5rem] group border-white/5 hover:border-brand-blue/40 transition-all cursor-default relative overflow-hidden"
+                className="glass p-5 md:p-10 rounded-[1.75rem] md:rounded-[2.5rem] group border-white/5 hover:border-brand-blue/40 transition-all cursor-default relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-[50px] rounded-full group-hover:bg-brand-blue/10 transition-colors" />
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-blue/10 transition-colors border border-white/5">
-                  <service.icon className="text-white group-hover:text-brand-blue transition-all" size={32} />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-5 md:mb-8 group-hover:bg-brand-blue/10 transition-colors border border-white/5">
+                  <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:text-brand-blue transition-all" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white font-display tracking-tight">{service.title}</h3>
-                <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                <h3 className="text-base md:text-2xl font-bold mb-3 md:mb-4 text-white font-display tracking-tight leading-tight">{service.title}</h3>
+                <p className="text-slate-400 leading-relaxed text-[11px] md:text-sm font-medium">
                   {service.desc}
                 </p>
               </motion.div>
@@ -441,7 +445,7 @@ export default function App() {
             <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display">Çözüm Paketleri</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 title: "Web Site Kurulumu",
@@ -465,7 +469,7 @@ export default function App() {
               },
               {
                 title: "Reklam Yönetimi",
-                oldPrice: "7.500 TL",
+                oldPrice: "10.000 TL",
                 price: "8.000 TL",
                 period: "/ Ay",
                 subtitle: "Aylık Yönetim",
@@ -480,40 +484,40 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`glass p-12 rounded-[3rem] border-white/5 ${pkg.highlight ? 'ring-2 ring-brand-purple/30 glow-purple bg-brand-purple/[0.02]' : ''} relative flex flex-col`}
+                className={`glass p-5 md:p-12 rounded-[1.75rem] md:rounded-[3rem] border-white/5 ${pkg.highlight ? 'ring-2 ring-brand-purple/30 glow-purple bg-brand-purple/[0.02]' : ''} relative flex flex-col`}
               >
                 {pkg.highlight && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">En Çok Tercih Edilen</span>
+                  <span className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 px-2 md:px-4 py-1 bg-brand-purple text-white text-[8px] md:text-[10px] font-bold uppercase tracking-widest rounded-full whitespace-nowrap">En Çok Tercih Edilen</span>
                 )}
-                <h3 className="text-2xl font-bold mb-1 text-white font-display">{pkg.title}</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-1 text-white font-display leading-tight">{pkg.title}</h3>
                 {pkg.subtitle && (
-                  <div className="text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-6 font-bold">
+                  <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-slate-500 uppercase mb-4 md:mb-6 font-bold leading-relaxed">
                     {pkg.subtitle}
                   </div>
                 )}
 
-                <div className="mb-8 flex flex-col">
+                <div className="mb-5 md:mb-8 flex flex-col">
                   {pkg.oldPrice && (
-                    <span className="text-slate-500 text-sm line-through opacity-50 font-mono mb-1">
+                    <span className="text-slate-500 text-xs md:text-sm line-through opacity-50 font-mono mb-1">
                       {pkg.oldPrice}
                     </span>
                   )}
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white tracking-tighter font-display">
+                  <div className="flex flex-wrap items-baseline gap-1">
+                    <span className="text-2xl md:text-4xl font-bold text-white tracking-tighter font-display">
                       {pkg.price}
                     </span>
                     {pkg.period && (
-                      <span className="text-slate-400 text-sm font-medium">
+                      <span className="text-slate-400 text-xs md:text-sm font-medium">
                         {pkg.period}
                       </span>
                     )}
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-10 flex-1">
+                <div className="space-y-2.5 md:space-y-4 mb-6 md:mb-10 flex-1">
                   {pkg.features.map((feat, fi) => (
-                    <div key={fi} className="flex items-center gap-3 text-sm text-slate-400">
-                      <div className={`w-1.5 h-1.5 rounded-full ${pkg.highlight ? 'bg-brand-purple' : 'bg-brand-blue'}`} />
+                    <div key={fi} className="flex items-start gap-2 md:gap-3 text-[11px] md:text-sm text-slate-400 leading-snug">
+                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${pkg.highlight ? 'bg-brand-purple' : 'bg-brand-blue'}`} />
                       {feat}
                     </div>
                   ))}
@@ -522,7 +526,7 @@ export default function App() {
                   href={pkg.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-4 rounded-2xl font-bold text-white transition-all cursor-pointer text-center ${pkg.highlight ? 'bg-brand-purple hover:glow-purple' : 'bg-white/5 border border-white/10 hover:bg-white/10'}`}
+                  className={`w-full py-3 md:py-4 rounded-2xl font-bold text-white transition-all cursor-pointer text-center text-xs md:text-base ${pkg.highlight ? 'bg-brand-purple hover:glow-purple' : 'bg-white/5 border border-white/10 hover:bg-white/10'}`}
                 >
                   Detaylı Bilgi Al
                 </a>
