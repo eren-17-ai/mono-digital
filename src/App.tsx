@@ -460,7 +460,7 @@ export default function App() {
                 price: "10.000 TL",
                 period: "/ Ay",
                 subtitle: "Web + Reklam + Otomasyon",
-                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama"],
+                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama", "Haftalık 4 İçerik/Reklam Kredisi"],
                 highlight: true,
                 color: "brand-purple",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
@@ -470,7 +470,7 @@ export default function App() {
                 price: "6.000 TL",
                 period: "/ Ay",
                 subtitle: "Aylık Yönetim",
-                features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu", "Video çekimleri", "Reklam kreatifleri", "Profesyonel edit"],
+                features: ["Meta reklam kurulumu", "Hedef kitle analizi", "Haftalık optimizasyon", "Aylık performans raporu", "Video çekimleri", "Reklam kreatifleri", "Profesyonel edit", "Haftalık 3 İçerik/Reklam Kredisi"],
                 color: "brand-blue",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Reklam%20Y%C3%B6netimi%20paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
               }
