@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import {
   Zap,
   Cpu,
@@ -16,11 +16,25 @@ import {
   Twitter,
   Github,
   Instagram,
-  MessageCircle
+  MessageCircle,
+  Send,
+  Loader2,
+  User,
+  Mail,
+  Building2,
+  Wallet
 } from 'lucide-react';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 // --- Components ---
+
+const navLinks = [
+  { label: 'Ana Sayfa', href: '#ana-sayfa' },
+  { label: 'Hizmetler', href: '#hizmetler' },
+  { label: 'Paketler', href: '#paketler' },
+  { label: 'Hakkımızda', href: '#hakkımızda' },
+  { label: 'İletişim', href: '#iletisim' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,18 +53,18 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-10">
-          {['Ana Sayfa', 'Hizmetler', 'Paketler', 'Hakkımızda'].map((item) => (
+          {navLinks.map((link) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={link.label}
+              href={link.href}
               className="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
             >
-              {item}
+              {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-blue group-hover:w-full transition-all duration-300" />
             </a>
           ))}
           <a
-            href="#contact-details"
+            href="#iletisim"
             className="bg-white text-black hover:bg-brand-blue hover:text-white px-8 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer font-display uppercase tracking-wider inline-block"
           >
             İletişime Geç
@@ -68,18 +82,18 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden mt-2 glass rounded-[1.5rem] p-6 flex flex-col gap-4"
         >
-          {['Ana Sayfa', 'Hizmetler', 'Paketler', 'Hakkımızda'].map((item) => (
+          {navLinks.map((link) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={link.label}
+              href={link.href}
               className="text-lg font-medium text-slate-400 font-display"
               onClick={() => setIsOpen(false)}
             >
-              {item}
+              {link.label}
             </a>
           ))}
           <a
-            href="#contact-details"
+            href="#iletisim"
             className="bg-white text-black w-full py-4 rounded-xl font-bold font-display uppercase tracking-wider cursor-pointer text-center inline-block"
             onClick={() => setIsOpen(false)}
           >
@@ -88,6 +102,257 @@ const Navbar = () => {
         </motion.div>
       )}
     </nav>
+  );
+};
+
+// --- Contact Form Component ---
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    industry: '',
+    estimatedBudget: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setError(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const res = await fetch('https://m7vj78mo.rpcld.com/webhook/lead-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Submission failed');
+      setIsSuccess(true);
+    } catch {
+      setError('Bir hata oluştu. Lütfen tekrar deneyin.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const fields = [
+    {
+      name: 'fullName',
+      label: 'Full Name',
+      type: 'text',
+      placeholder: 'John Doe',
+      icon: User,
+    },
+    {
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      icon: Mail,
+    },
+    {
+      name: 'industry',
+      label: 'Industry',
+      type: 'text',
+      placeholder: 'E-commerce, SaaS, Healthcare...',
+      icon: Building2,
+    },
+    {
+      name: 'estimatedBudget',
+      label: 'Estimated Budget',
+      type: 'text',
+      placeholder: '₺10.000 – ₺50.000',
+      icon: Wallet,
+    },
+  ];
+
+  return (
+    <section id="iletisim" className="py-32 px-6 relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-brand-blue/8 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-brand-purple/8 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-blue mb-4 block font-bold"
+          >
+            İletişime Geçin
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-7xl font-bold mb-6 tracking-tight text-white font-display"
+          >
+            Projenizi Başlatalım
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base font-medium leading-relaxed"
+          >
+            Aşağıdaki formu doldurun, ekibimiz en kısa sürede sizinle iletişime geçsin.
+          </motion.p>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
+          <AnimatePresence mode="wait">
+            {isSuccess ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="glass rounded-[2.5rem] p-12 md:p-16 text-center relative overflow-hidden"
+              >
+                {/* Success glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 via-transparent to-brand-purple/5" />
+                <div className="relative z-10">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: 'spring', stiffness: 200, damping: 15 }}
+                    className="w-20 h-20 mx-auto mb-8 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center"
+                  >
+                    <CheckCircle2 className="w-10 h-10 text-green-400" />
+                  </motion.div>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-2xl md:text-3xl font-bold text-white font-display tracking-tight mb-4"
+                  >
+                    Talebiniz Alındı!
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="text-slate-400 text-base md:text-lg leading-relaxed max-w-md mx-auto"
+                  >
+                    Your request has been successfully received. Our manager will contact you shortly.
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                    className="mt-8 inline-flex items-center gap-2 text-xs font-mono tracking-widest text-brand-blue/60 uppercase"
+                  >
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                    Confirmed
+                  </motion.div>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                onSubmit={handleSubmit}
+                className="glass rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden"
+              >
+                {/* Form background accent */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-brand-blue/5 blur-[60px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-purple/5 blur-[50px] rounded-full pointer-events-none" />
+
+                <div className="relative z-10 space-y-6">
+                  {fields.map((field, i) => (
+                    <motion.div
+                      key={field.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                    >
+                      <label
+                        htmlFor={field.name}
+                        className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-slate-500 mb-3 font-bold"
+                      >
+                        <field.icon size={14} className={focusedField === field.name ? 'text-brand-blue' : 'text-slate-600'} />
+                        {field.label}
+                      </label>
+                      <input
+                        id={field.name}
+                        name={field.name}
+                        type={field.type}
+                        required
+                        placeholder={field.placeholder}
+                        value={formData[field.name as keyof typeof formData]}
+                        onChange={handleChange}
+                        onFocus={() => setFocusedField(field.name)}
+                        onBlur={() => setFocusedField(null)}
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 text-sm font-medium outline-none transition-all duration-300 focus:border-brand-blue/50 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,70,229,0.1)] hover:border-white/20"
+                      />
+                    </motion.div>
+                  ))}
+
+                  {/* Error message */}
+                  <AnimatePresence>
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, height: 0 }}
+                        animate={{ opacity: 1, y: 0, height: 'auto' }}
+                        exit={{ opacity: 0, y: -10, height: 0 }}
+                        className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium text-center"
+                      >
+                        {error}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Submit button */}
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full mt-4 py-4 md:py-5 rounded-2xl font-bold text-base uppercase tracking-widest font-display transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 bg-gradient-to-r from-brand-blue to-brand-purple text-white shadow-[0_0_40px_rgba(79,70,229,0.2)] hover:shadow-[0_0_60px_rgba(79,70,229,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        Gönderiliyor...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        Formu Gönder
+                      </>
+                    )}
+                  </motion.button>
+
+                  {/* Trust badge */}
+                  <div className="flex items-center justify-center gap-2 pt-2">
+                    <div className="w-1 h-1 rounded-full bg-green-500/50" />
+                    <span className="text-[10px] font-mono tracking-widest text-slate-600 uppercase">
+                      Verileriniz güvende · SSL Korumalı
+                    </span>
+                  </div>
+                </div>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -236,7 +501,7 @@ export default function App() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#contact-details"
+              href="#iletisim"
               className="bg-white text-black px-10 py-3.5 rounded-full font-bold text-base hover:bg-brand-blue hover:text-white transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] cursor-pointer inline-block uppercase tracking-wider font-display"
             >
               İletişime Geç
@@ -627,6 +892,9 @@ export default function App() {
           </div>
         </div>
       </motion.section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       {/* Footer */}
       <footer className="py-32 px-6 border-t border-white/5 bg-[#030303] relative overflow-hidden">
