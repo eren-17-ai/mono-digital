@@ -725,7 +725,7 @@ export default function App() {
                 price: "10.000 TL",
                 period: "/ Ay",
                 subtitle: "Web + Reklam + Otomasyon",
-                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Otomasyon sistemleri", "WhatsApp entegrasyonu", "CRM ve müşteri takibi", "Sürekli teknik destek", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama", "Haftalık 4 İçerik/Reklam Kredisi"],
+                features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama", "Haftalık 4 İçerik/Reklam Kredisi"],
                 highlight: true,
                 color: "brand-purple",
                 whatsapp: "https://wa.me/905055784272?text=Merhaba,%20Dijital%20Sistem%20Paketi%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20almak%20istiyorum."
