@@ -724,7 +724,7 @@ export default function App() {
                 title: "Dijital Sistem Paketi",
                 price: "10.000 TL",
                 period: "/ Ay",
-                subtitle: "Web + Reklam + Otomasyon",
+                subtitle: "Web + Reklam",
                 features: ["Web sitesi yönetimi", "Meta reklam yönetimi", "Profesyonel video çekimi", "Profesyonel edit", "Kreatif hazırlama", "Haftalık 4 İçerik/Reklam Kredisi"],
                 highlight: true,
                 color: "brand-purple",
